@@ -1,0 +1,198 @@
+/* Import custom fonts */
+@font-face {
+    font-family: 'PoppinsMid';
+    src: url('/src/assets/fonts/Poppins-Medium.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+    font-family: 'PoppinsMid', sans-serif;
+    background-color: #202020;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout Containers */
+#root {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+.app {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    max-width: 200px;
+    background-color: #000;
+    padding: 10px 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    margin-left: -10px;
+    font-family: 'PoppinsMid', sans-serif;
+}
+
+.sidebar h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    padding: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22px;
+    padding: 0;
+
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff; /* Change to the desired hover color */
+}
+        
+.sidebar ul li a {
+    text-decoration: none;
+    color: #555555;
+}
+
+/* Chat Component Styles */
+.chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #202020;
+    padding: 20px;
+    margin-right: 90px; // Adjust based on sidebar width
+    margin-left: 90px;
+    height: 94.5vh; // Full height of the viewport
+    overflow-y: auto; // Enables scrolling for chat content
+}
+
+.active {
+    color: #ffffff; /* Blue text color */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a {
+    color: #000000; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+nav ul li a.active {
+    color: #ffffff; /* Change text color when active */
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto; // Enables scrolling within the chat messages
+    padding-right: 15px; // To accommodate scrollbar if it appears
+    display: flex;
+    flex-direction: column;
+    gap: 10px; // Adds space between messages
+}
+
+.chat-message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+    background-color: #333;
+    color: white;
+}
+
+.chat-message.user {
+    align-self: flex-end; // Align user messages to the right
+    background-color: #239700;
+}
+
+.chat-message.bot {
+    align-self: flex-start; // Align bot messages to the left
+    background-color: #000;
+    border: 2.5px solid #2b2b2b;
+}
+
+.chat-message p {
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+.intro-message {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+.chat-input input {
+    flex-grow: 1;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #40ff00;
+    background-color: #161616;
+    color: white;
+    font-family: 'PoppinsMid';
+    border-radius: 10px;
+    outline: none;
+    resize: none; /* Optional: removes the ability to resize the textarea */
+    overflow-wrap: break-word; /* Ensures that words break if needed */
+    white-space: pre-wrap; /* Ensures that the text wraps correctly */
+}
+
+.chat-input button {
+    padding: 10px;
+    width: 100px;
+    border: none;
+    background-color: #000;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: 2px solid #898989;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(97, 255, 5, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(97, 255, 5, 0.3);
+    }
+}
+
+.chat-input input:focus {
+    animation: pulse 3s infinite;
+    box-shadow: 0 0 0 0 rgba(97, 255, 5, 0.7);
+}
