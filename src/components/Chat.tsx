@@ -4,6 +4,7 @@ import { Message } from './types'; // Assuming you have a types file
 const VITE_OPENAI_API_KEY = "";
 
 const ChatComponent = () => {
+    
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState<string>('');
 
@@ -63,23 +64,25 @@ const ChatComponent = () => {
 
     
     return (
-        <div className="chat-container">
-            <div style={{height: '1.4em'}}> </div>
+        <div className="chat_page-container">
+            <h1>Chat 🤖</h1>
 
-            <div className="chat-messages">
-                {messages.map((msg, index) => (
-                    <ChatMessage key={index} message={msg.message} sender={msg.sender} />
-                ))}
-            </div>
-            <div className="chat-input">
-                <input
-                    type="text"
-                    value={input}
-                    placeholder='Start typing here...'
-                    onChange={(e) => setInput(e.target.value)
-                    }
-                />
-                <button onClick={handleSend}>Send</button>
+            <div className="chat-container">
+                <div className="chat-messages">
+                    {messages.map((msg, index) => (
+                        <ChatMessage key={index} message={msg.message} sender={msg.sender} />
+                    ))}
+                </div>
+                <div className="chat-input">
+                    <input
+                        type="text"
+                        value={input}
+                        placeholder='Start typing here...'
+                        onChange={(e) => setInput(e.target.value)
+                        }
+                    />
+                    <button onClick={handleSend}>Send</button>
+                </div>
             </div>
         </div>
     );

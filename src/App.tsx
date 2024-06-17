@@ -25,7 +25,7 @@ function App() {
           {isSidebarVisible ? '<' : '>'}
         </div>
         <Routes>
-          <Route path="/" element={<Chat />} />
+          <Route path="/" element={<Chat />} /> 
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/faq" element={<Faq />} />
         </Routes>

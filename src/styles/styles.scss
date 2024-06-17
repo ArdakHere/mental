@@ -31,7 +31,7 @@ body {
 }
 
 /* Sidebar Styles */
-.sidebar {
+.sidebar{
     width: 140px;
     background-color: #000;
     padding: 10px 50px;
@@ -44,15 +44,16 @@ body {
 
 }
 
-
 .hide_button{
-    color: #000000;
+    color: #7b7b7b;
     outline: none;
     resize: none; /* Optional: removes the ability to resize the textarea */
-    padding: 0;
     margin: auto;
-    height: 50px;
-    font-size: 50px;
+    transform: translateX(-70px);
+    transition: transform 2s ease;
+    height: 70px;
+
+    font-size: 70px;
     cursor: pointer;
     border: none;
 }
@@ -63,11 +64,14 @@ body {
 }   
 
 .sidebar-hidden .sidebar {
-    transform: translateX(-68%);
-    opacity: 0.5;
+    margin-right: -70px;
+    transform: translateX(-70%);
+
+
+    opacity: 0.8;
 }
 
-.sidebar-visible .sidebar {
+.sidebar-visible .sidebar{
     transform: translateX(0);
     opacity: 1;
 }
@@ -116,12 +120,27 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #202020;
-    padding: 20px;
+    padding: 0px 20px;
     margin-right: 90px; // Adjust based on sidebar width
-    margin-left: 90px;
-    height: 94.5vh; // Full height of the viewport
+    margin-left: 50px;
+    height: 98.5vh; // Full height of the viewport
     overflow-y: auto; // Enables scrolling for chat content
 }
+
+.chat_page-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 98.5vh;
+}
+
+.chat_page-container h1{
+    margin-left: 70px;
+    margin-right: 90px;
+    margin-top: 1.37em;
+}
+
+
 
 .active {
     color: #ffffff; /* Blue text color */
@@ -144,17 +163,18 @@ nav ul li a.active {
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto; // Enables scrolling within the chat messages
-    padding-right: 15px; // To accommodate scrollbar if it appears
+    padding-right: 15cpx; // To accommodate scrollbar if it appears
     display: flex;
     flex-direction: column;
-    gap: 10px; // Adds space between messages
+    gap: 5px; // Adds space between messages
 }
 
 .chat-message {
     padding: 10px;
     border-radius: 10px;
+
     max-width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     word-wrap: break-word;
     background-color: #333;
     color: white;
@@ -189,17 +209,6 @@ nav ul li a.active {
     display: flex;
     padding: 10px;
 }
-
-.intro-message {
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    max-width: 70%;
-    margin: 20px auto;
-    text-align: center;
-    opacity: 0.8;
-}
-
 
 .chat-input input {
     flex-grow: 1;
@@ -244,7 +253,7 @@ nav ul li a.active {
 }
 
 .contacts_container{
-    margin-left: 110px;
+    margin-left: 70px;
     margin-right: 90px;
     display: flex;
     width: 100%;
@@ -253,7 +262,7 @@ nav ul li a.active {
 }
 
 .faq_container{
-    margin-left: 110px;
+    margin-left: 70px;
     margin-right: 90px;
     margin-top: 1.4em;
     display: flex;

@@ -18,7 +18,7 @@ const Faq = () => {
             <div className="faq_question_container">
                 <h2>2.</h2>
                 <div className={`chat-message user`}>
-                        <p>Do you guarantee that the your AI therapist will help me?</p>
+                        <p>Do you guarantee that your AI therapist will help me?</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
@@ -28,7 +28,7 @@ const Faq = () => {
             <div className="faq_question_container">
                 <h2>3.</h2>
                 <div className={`chat-message user`}>
-                        <p>Does your AI therapist recommends medications?</p>
+                        <p>Does your AI therapist recommend medications?</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
