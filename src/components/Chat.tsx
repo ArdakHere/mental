@@ -64,6 +64,8 @@ const ChatComponent = () => {
     
     return (
         <div className="chat-container">
+            <div style={{height: '1.4em'}}> </div>
+
             <div className="chat-messages">
                 {messages.map((msg, index) => (
                     <ChatMessage key={index} message={msg.message} sender={msg.sender} />

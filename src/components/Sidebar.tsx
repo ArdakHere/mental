@@ -15,13 +15,13 @@ const Sidebar: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                        <Link to="/" className={isActive('/') ? 'active' : ''}>Chat</Link>
+                        <Link to="/" style={{width: '120%'}} className={isActive('/') ? 'active' : ''}>Chat <span style={{marginLeft: '90px'}}>⌨️</span></Link>
                         </li>
                         <li>
-                        <Link to="/contacts" className={isActive('/contacts') ? 'active' : ''}>Contacts</Link>
+                        <Link to="/contacts" style={{width: '120%'}} className={isActive('/contacts') ? 'active' : ''}>Contacts <span style={{marginLeft: '42px'}}>📒</span></Link>
                         </li>
                         <li>
-                        <Link to="/faq" className={isActive('/faq') ? 'active' : ''}>FAQ</Link>
+                        <Link to="/faq" style={{width: '120%'}} className={isActive('/faq') ? 'active' : ''}>FAQ <span style={{marginLeft: '100px'}}>❓</span></Link>
                         </li>
                     </ul>
                 </nav>

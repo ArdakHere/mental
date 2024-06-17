@@ -10,11 +10,20 @@ import Faq from './pages/Faq'
 
 
 function App() {
+  
+  const [isSidebarVisible, setSidebarVisible] = useState(true);
 
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
+  
   return (
-      <Router>
-      <div className="app">
-        <Sidebar />
+    <Router>
+      <div className={`app ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
+        {<Sidebar />}
+        <div className="hide_button" onClick={toggleSidebar}>
+          {isSidebarVisible ? '<' : '>'}
+        </div>
         <Routes>
           <Route path="/" element={<Chat />} />
           <Route path="/contacts" element={<Contacts />} />
