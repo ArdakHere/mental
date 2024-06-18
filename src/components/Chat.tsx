@@ -62,6 +62,14 @@ const ChatComponent = () => {
         setMessages([{ message: "Hello, there! How are you? Do you have something to talk about? 🙂", sender: 'bot' }]);
     }, []);
 
+    // Handle Enter key press to send message
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSend();
+        }
+    };
+
+
     
     return (
         <div className="chat_page-container">
@@ -76,8 +84,10 @@ const ChatComponent = () => {
                 <div className="chat-input">
                     <input
                         type="text"
+                        
                         value={input}
                         placeholder='Start typing here...'
+                        onKeyDown={handleKeyPress}
                         onChange={(e) => setInput(e.target.value)
                         }
                     />

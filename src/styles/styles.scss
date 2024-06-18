@@ -1,7 +1,7 @@
 /* Import custom fonts */
 @font-face {
     font-family: 'PoppinsMid';
-    src: url('/src/assets/fonts/Poppins-Medium.ttf') format('truetype'); 
+    src: url('/src/assets/fonts/Poppins-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -23,15 +23,72 @@ body {
     max-height: 100vh;
 }
 .app {
+    position: relative;
+
     display: flex;
     flex-grow: 1;
     width: 100%;
     transition: transform 0.5s ease, opacity 0.5s ease;
+    background-size: cover;
+    transition: backdrop-filter 3s ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.7); /* Light blur effect */
+    backdrop-filter: blur(10px); /* This creates the blur effect */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
 
 }
 
+.overlay-content {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-align: center;
+    transition: opacity 3s ease-in-out;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+
+.fade-blur {
+    opacity: 0;
+    backdrop-filter: blur(0px); // Remove blur
+}
+
+
+
+
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.mentai-heading {
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    color: rgb(255, 255, 255); // Default color for "Ment"
+    font-size: 24px; // Adjust font size as needed
+}
+
+.ai {
+    color: green; // Color for "AI"
+}
+
 /* Sidebar Styles */
-.sidebar{
+.sidebar {
     width: 140px;
     background-color: #000;
     padding: 10px 50px;
@@ -41,37 +98,37 @@ body {
     margin-left: -10px;
     font-family: 'PoppinsMid', sans-serif;
     transition: transform 0.5s ease, opacity 0.5s ease;
-
+    position: relative;
 }
 
-.hide_button{
+.hide_button {
     color: #7b7b7b;
     outline: none;
-    resize: none; /* Optional: removes the ability to resize the textarea */
+    resize: none;
     margin: auto;
-    transform: translateX(-70px);
-    transition: transform 2s ease;
-    height: 70px;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    transform: translateX(-134%) translateY(28%);
 
-    font-size: 70px;
+    height: 50px;
+    font-size: 30px;
     cursor: pointer;
     border: none;
+    background: none;
+    transition: color 0.4s ease;
 }
 
-.hide_button:hover{
+.hide_button:hover {
     color: #ffffff;
-    transition: color 0.4s ease;
-}   
+}
 
 .sidebar-hidden .sidebar {
-    margin-right: -70px;
-    transform: translateX(-70%);
-
-
+    transform: translateX(-67.5%);
     opacity: 0.8;
 }
 
-.sidebar-visible .sidebar{
+.sidebar-visible .sidebar {
     transform: translateX(0);
     opacity: 1;
 }
@@ -93,25 +150,25 @@ body {
     flex-direction: column;
     font-size: 22px;
     padding: 0;
-
 }
-
 
 .sidebar ul li {
     margin: 10px 0;
     width: 120%;
     min-width: 120%;
-    
 }
 
 .sidebar ul li a:hover {
     color: #ffffff; /* Change to the desired hover color */
 }
-        
+
 .sidebar ul li a {
     text-decoration: none;
     color: #555555;
-    width: 120%;
+    width: 100%;
+    margin-left: 2px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Chat Component Styles */
@@ -127,20 +184,18 @@ body {
     overflow-y: auto; // Enables scrolling for chat content
 }
 
-.chat_page-container{
+.chat_page-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 98.5vh;
 }
 
-.chat_page-container h1{
+.chat_page-container h1 {
     margin-left: 70px;
     margin-right: 90px;
     margin-top: 1.37em;
 }
-
-
 
 .active {
     color: #ffffff; /* Blue text color */
@@ -155,7 +210,7 @@ nav ul li a {
     transition: color 0.3s ease;
     width: 100%;
 }
-  
+
 nav ul li a.active {
     color: #ffffff; /* Change text color when active */
 }
@@ -163,7 +218,7 @@ nav ul li a.active {
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto; // Enables scrolling within the chat messages
-    padding-right: 15cpx; // To accommodate scrollbar if it appears
+    padding-right: 15px; // To accommodate scrollbar if it appears
     display: flex;
     flex-direction: column;
     gap: 5px; // Adds space between messages
@@ -172,7 +227,6 @@ nav ul li a.active {
 .chat-message {
     padding: 10px;
     border-radius: 10px;
-
     max-width: 100%;
     margin-bottom: 15px;
     word-wrap: break-word;
@@ -252,7 +306,7 @@ nav ul li a.active {
     box-shadow: 0 0 0 0 rgba(97, 255, 5, 0.7);
 }
 
-.contacts_container{
+.contacts_container {
     margin-left: 70px;
     margin-right: 90px;
     display: flex;
@@ -261,34 +315,22 @@ nav ul li a.active {
     margin-top: 1.4em;
 }
 
-.faq_container{
+.faq_container {
     margin-left: 70px;
     margin-right: 90px;
     margin-top: 1.4em;
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
     flex-grow: 1;
 }
 
-.faq_question_container{
+.faq_question_container {
     display: flex;
     flex-direction: row;
 }
 
-.faq_question_container h2{
+.faq_question_container h2 {
     margin-right: 10px;
     margin-top: 0px;
 }
-
-// .chat-container {
-//     flex-grow: 1;
-//     display: flex;
-//     flex-direction: column;
-//     background-color: #202020;
-//     padding: 20px;
-//     margin-right: 90px; // Adjust based on sidebar width
-//     margin-left: 90px;
-//     height: 94.5vh; // Full height of the viewport
-//     overflow-y: auto; // Enables scrolling for chat content
-// }
