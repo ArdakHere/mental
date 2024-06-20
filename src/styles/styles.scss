@@ -281,7 +281,7 @@ nav ul li a.active {
 
 .chat-input button {
     padding: 10px;
-    width: 100px;
+    width: 120px;
     border: none;
     background-color: #000;
     font-size: 18px;
@@ -333,4 +333,26 @@ nav ul li a.active {
 .faq_question_container h2 {
     margin-right: 10px;
     margin-top: 0px;
+}
+
+.translation_buttons {
+    margin-top: 1em;
+    margin-right: 16px;
+    display: flex;       /* Enables flexbox for the container */
+    flex-direction: row; /* Aligns the children in a column */
+    gap: 2px;           /* Optional: adds space between the buttons */
+}
+
+.translation_buttons .button {
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: #555555;
+    background-color: transparent;
+    cursor: pointer;    /* Indicates that the element is interactive */
+    transition: color 0.3s, color 0.3s; /* Smooth transition for background color and text color */
+}
+
+.translation_buttons .button:hover {
+    color: #ffffff;            /* Darker text color on hover */
 }

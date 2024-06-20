@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
@@ -7,6 +8,9 @@ import Contacts from './pages/Contacts';
 import Faq from './pages/Faq';
 import Profile from './pages/Profile';
 import Payments from './pages/Payments';
+import { useTranslation } from 'react-i18next';
+import './i18n'; // Import the i18n configuration
+
 
 function App() {
     const [isSidebarVisible, setSidebarVisible] = useState(true);
@@ -15,6 +19,12 @@ function App() {
     const [showOverlay, setShowOverlay] = useState(true);
     const [overlayText, setOverlayText] = useState("hello");
     const [blurComplete, setBlurComplete] = useState(false);
+
+    const { i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
 
     useEffect(() => {
         const texts = [
@@ -74,6 +84,7 @@ function App() {
 
     return (
         <Router>
+            
             {showOverlay && (
                 <div className={`overlay ${blurComplete ? 'fade-blur' : ''}`} onClick={handleOverlayClick}>
                     <div className="overlay-content">

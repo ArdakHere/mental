@@ -1,52 +1,62 @@
 import Sidebar from "../components/Sidebar";
 
+import { useTranslation } from 'react-i18next';
+
 
 const Faq = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="faq_container">
             <h1>FAQ 🤔</h1>
             <div className="faq_question_container">
                 <h2>1.</h2>
                 <div className={`chat-message user`}>
-                        <p>Do you collect my data? I am concerned about privacy.</p>
+                        <p>{t('faq.question1')}</p>
                 </div>
                 
             </div>
             <div className={`chat-message bot_faq`}>
-                <p>NO, under no circumstances. Our technology itself is unable to store any data programatically</p>
+                <p>{t('faq.answer1')}</p>
             </div>
             <div className="faq_question_container">
                 <h2>2.</h2>
                 <div className={`chat-message user`}>
-                        <p>Do you guarantee that your AI therapist will help me?</p>
+                        <p>{t('faq.question2')}</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
-                <p>Unfortunetaly, we can't guarantee this. However, it will make sure to ask the right questions <br></br> 
-                and make sure you feel heard and understood</p>
+                <p>{t('faq.answer2')}</p>
             </div>
             <div className="faq_question_container">
                 <h2>3.</h2>
                 <div className={`chat-message user`}>
-                        <p>Does your AI therapist recommend medications?</p>
+                        <p>{t('faq.question3')}</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
-                <p>Yes, our AI therapist may recommend medications, but only mild ones, as stronger ones <br></br> 
-                would require the consultation of a licensed healthcare professional</p>
+                <p>{t('faq.answer3')}</p>
             </div>
             <div className="faq_question_container">
                 <h2>3.</h2>
                 <div className={`chat-message user`}>
-                        <p>Is it cheaper for me to use your AI therapist or go to an actual therapist?</p>
+                        <p>{t('faq.question4')}</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
-                <p>Yes, our AI therapist may recommend medications, but only mild ones, as stronger ones <br></br> 
-                would require the consultation of a licensed healthcare professional</p>
+                {t('faq.answer4')}
             </div>
+            
         </div>
     );
 }
 
 export default Faq;
+
+{/* <div className={`chat-message bot_faq`}>
+    <p>It is absolutely cheaper to go with our AI therapist considering: <br></br>
+    <li>24/7 access <br></br> </li>
+    <li>No need to think about confidentiality of your data. You achieve safe space with us <br></br> </li>
+    <li>Empathy and comfort provided by people who programmed the AI</li>
+    </p>
+</div> */}

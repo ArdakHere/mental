@@ -1,0 +1,24 @@
+{  
+    "profile": "Profile",
+    "contacts": "Contacts",
+    "payments": "Payments",
+    "chat": "Chat",
+    "business_inquiries": "For business inquiries, please contact us at either of these two email addresses:",
+    "sidebar_chat": "Chat",
+    "sidebar_profile": "Profile",
+    "sidebar_contacts": "Contacts",
+    "sidebar_payments": "Payments",
+    "send_prompt": "Send",
+    "prompt_window_hint": "Start typing here...",
+    "mentai_first_message": "Hello! How are you? Do you have something to share or talk about?",
+    "faq": {
+        "question1": "Do you collect my data? I am concerned about privacy.",
+        "answer1": "NO, under no circumstances. Our technology itself cannot store any data programmatically.",
+        "question2": "Do you guarantee that your AI therapist will help me?",
+        "answer2": "Unfortunately, we cannot guarantee this. However, it will definitely ask the right questions and ensure that you feel heard and understood.",
+        "question3": "Does your AI therapist recommend medications?",
+        "answer3": "Yes, our AI therapist may recommend mild medications, as stronger ones would require the consultation of a licensed healthcare professional.",
+        "question4": "Is it cheaper for me to use your AI therapist or to see a real therapist?",
+        "answer4": "Choosing our AI therapist is absolutely cheaper, considering: 1. 24/7 access | 2. No need to worry about the confidentiality of your data. You have a safe space with us | 3. Empathy and comfort provided by the people who programmed the AI."
+    }
+}

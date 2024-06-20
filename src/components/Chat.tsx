@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ChatMessage from './ChatMessage';
 import { Message } from './types'; // Assuming you have a types file
+import { useTranslation } from 'react-i18next';
 const VITE_OPENAI_API_KEY = "";
 
 const ChatComponent = () => {
@@ -10,6 +11,7 @@ const ChatComponent = () => {
 
     // Fetching response from OpenAI
     const getOpenAIResponse = async (prompt: string): Promise<string> => {
+        
         const url = "https://api.openai.com/v1/chat/completions";
         const payload = {
             model: "gpt-3.5-turbo",
@@ -58,9 +60,13 @@ const ChatComponent = () => {
     };
 
     // Initialize with welcome message
+    const { t } = useTranslation();
+    
     useEffect(() => {
-        setMessages([{ message: "Hello, there! How are you? Do you have something to talk about? 🙂", sender: 'bot' }]);
-    }, []);
+        setMessages([{ message: t('mentai_first_message') + ' 🙂', sender: 'bot' }]);
+    }, [t]);
+
+   
 
     // Handle Enter key press to send message
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -70,10 +76,9 @@ const ChatComponent = () => {
     };
 
 
-    
     return (
         <div className="chat_page-container">
-            <h1>Chat 🤖</h1>
+            <h1>{t('chat')} 🤖</h1>
 
             <div className="chat-container">
                 <div className="chat-messages">
@@ -86,12 +91,12 @@ const ChatComponent = () => {
                         type="text"
                         
                         value={input}
-                        placeholder='Start typing here...'
+                        placeholder= {t('prompt_window_hint')}
                         onKeyDown={handleKeyPress}
                         onChange={(e) => setInput(e.target.value)
                         }
                     />
-                    <button onClick={handleSend}>Send</button>
+                    <button onClick={handleSend}>{t('send_prompt')}</button>
                 </div>
             </div>
         </div>
