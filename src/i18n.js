@@ -5,6 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './locales/en/translation.json';
 import translationRU from './locales/ru/translation.json';
+import translationKZ from './locales/kz/translation.json';
+
 
 const resources = {
   en: {
@@ -12,6 +14,9 @@ const resources = {
   },
   ru: {
     translation: translationRU
+  },
+  kz: {
+    translation: translationKZ
   }
 };
 

@@ -20,5 +20,10 @@
         "answer3": "Yes, our AI therapist may recommend mild medications, as stronger ones would require the consultation of a licensed healthcare professional.",
         "question4": "Is it cheaper for me to use your AI therapist or to see a real therapist?",
         "answer4": "Choosing our AI therapist is absolutely cheaper, considering: 1. 24/7 access | 2. No need to worry about the confidentiality of your data. You have a safe space with us | 3. Empathy and comfort provided by the people who programmed the AI."
-    }
+    },
+    "hello": "hello!",
+    "welcome_message_1": "we help you become better",
+    "welcome_message_2": "we do NOT store your data",
+    "welcome_message_3": "we make you feel comfortable and safe"
+
 }

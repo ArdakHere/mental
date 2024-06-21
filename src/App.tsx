@@ -13,14 +13,20 @@ import './i18n'; // Import the i18n configuration
 
 
 function App() {
+
     const [isSidebarVisible, setSidebarVisible] = useState(true);
+    const { t } = useTranslation();
+
+
     const toggleSidebar = () => setSidebarVisible(!isSidebarVisible);
 
     const [showOverlay, setShowOverlay] = useState(true);
-    const [overlayText, setOverlayText] = useState("hello");
+    const [overlayText, setOverlayText] = useState(t('hello'));
     const [blurComplete, setBlurComplete] = useState(false);
 
     const { i18n } = useTranslation();
+
+
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
@@ -28,10 +34,10 @@ function App() {
 
     useEffect(() => {
         const texts = [
-            "we help you become better",
-            "we do NOT store your data",
-            "we make you feel comfortable and safe",
-        ];
+            t('welcome_message_1'),
+            t('welcome_message_2'),
+            t('welcome_message_3'),
+          ];
         let index = 0;
 
         const textDisplayDuration = 1000; // Show each text for 3 seconds

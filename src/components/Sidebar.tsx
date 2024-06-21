@@ -57,7 +57,7 @@ const Sidebar = ({ isSidebarVisible, toggleSidebar }) => {
                 <div className="translation_buttons">
                     <div className="button" onClick={() => changeLanguage('en')}>ENG</div>
                     <div className="button" onClick={() => changeLanguage('ru')}>РУС</div>
-                    <div className="button" onClick={() => changeLanguage('ru')}>ҚАЗ</div>
+                    <div className="button" onClick={() => changeLanguage('kz')}>ҚАЗ</div>
 
                 </div>
                 </ul>

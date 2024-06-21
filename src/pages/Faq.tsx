@@ -38,13 +38,13 @@ const Faq = () => {
                 <p>{t('faq.answer3')}</p>
             </div>
             <div className="faq_question_container">
-                <h2>3.</h2>
+                <h2>4.</h2>
                 <div className={`chat-message user`}>
                         <p>{t('faq.question4')}</p>
                 </div>
             </div>
             <div className={`chat-message bot_faq`}>
-                {t('faq.answer4')}
+                <p>{t('faq.answer4')}</p>
             </div>
             
         </div>
